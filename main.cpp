@@ -8,10 +8,10 @@ void menu_tamaño(); //pregunta si el tamano del excel es adecuado para el traba
 void menu_principal();
 
 //funciones de apoyo
-void insertarNodo();
-void desplegarListaPU();
 
 int op = 0;
+int cont = 0;
+string dato= "";
 
 int main(){
     do{
@@ -24,7 +24,26 @@ int main(){
                 return 0;
             }
             else if(op == 2){
+                cont = 5;
+                for(int i=0; i<cont;i++) {
+                    dato = "|1| ";
+                    insertarNodo(dato);
+                    dato = "|2| ";
+                    insertarNodo2(dato);
+                    dato = "|3| ";
+                    insertarNodo3(dato);
+                    dato = "|4| ";
+                    insertarNodo4(dato);
+                    dato = "|5| ";
+                    insertarNodo5(dato);
+                }
 
+                cout<<endl;
+                desplegarListaPU();
+                desplegarListaPU2();
+                desplegarListaPU3();
+                desplegarListaPU4();
+                desplegarListaPU5();
             }else{
                 return 0;
             }
@@ -38,10 +57,6 @@ int main(){
     } while (op != 0);
     return 0;
 
-
-    insertarNodo();
-    insertarNodo();
-    insertarNodo();
     cout << "\n Lista Primero al ultimo\n";
     desplegarListaPU();
 
@@ -63,37 +78,4 @@ void menu_principal(){
 }
 
 //----------funciones-----------
-void insertarNodo(){
-    fila1* nuevo = new fila1();
-    cout << " Ingrese el dato que contendra el nuevo Nodo: ";
-    cin >> nuevo->dato;
 
-    if(primero1==NULL){
-        primero1 = nuevo;
-        primero1->siguiente = NULL;
-        primero1->atras = NULL;
-        ultimo1 = primero1;
-    }else{
-        ultimo1->siguiente = nuevo;
-        nuevo->siguiente = NULL;
-        nuevo->atras = ultimo1;
-        ultimo1 = nuevo;
-    }
-    cout << "\n Nodo Ingresado\n\n";
-}
-
-
-void desplegarListaPU(){
-    fila1* actual = new fila1();
-    actual = primero1;
-    if(primero1!=NULL){
-
-        while(actual!=NULL){
-            cout << "\n " << actual->dato;
-            actual = actual->siguiente;
-        }
-
-    }else{
-        cout << "\n La listas se encuentra Vacia\n\n";
-    }
-}
