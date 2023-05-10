@@ -6,12 +6,17 @@ using namespace::std;
 //menus interactivos
 void menu_tamaño(); //pregunta si el tamano del excel es adecuado para el trabajo
 void menu_principal();
+void menu_funciones();
 
 //funciones de apoyo
+void posicion(string ubicacion);
 
 int op = 0;
+int opAux = 0;
 int cont = 0;
 string dato= "";
+string ubicacion = "";
+string portapapeles = "";
 
 int main(){
     do{
@@ -44,6 +49,60 @@ int main(){
                 desplegarListaPU3();
                 desplegarListaPU4();
                 desplegarListaPU5();
+
+                do{
+                    cout<<endl;
+                    desplegarListaPU();
+                    desplegarListaPU2();
+                    desplegarListaPU3();
+                    desplegarListaPU4();
+                    desplegarListaPU5();
+
+                    menu_funciones();
+                    cin>>opAux;
+                    switch (opAux) {
+                        case 1: //escribir en una celda
+                            cout<<"digite el dato"<<endl;
+                            cin>>dato;
+                            if(dato.length() == 8){
+                                cout<<"se ha escrito el dato"<<endl;
+                                //accion de meter el valor (pendiente)------------------------
+                            }
+                            else{
+                                cout<<"el dato ingresado es mas grande de lo permitido"<<endl;
+                            }
+                            break;
+                        case 2: //posicionarse en una celda
+                        cout<<"escriba la ubicacion"<<endl;
+                        cin>>ubicacion;
+                        if(ubicacion.length() == 2){
+                            //agregar accion de navegacion entre nodos----------------------
+                            posicion(ubicacion);
+                        }
+                        else{
+                            cout<<"tamano no valido"<<endl;
+                        }
+                            break;
+                        case 3: //copiar contenido de la celda
+                            break;
+                        case 4: //cortar contenido de la celda
+                            break;
+                        case 5: // pegar contenido
+
+                            break;
+                        case 6: //guardar archivo
+                            cout<<"guardando archivo..."<<endl;
+                            //agregar funcionaldidad de guardado-----------
+                            cout<<"archivo guardado"<<endl;
+                            break;
+                        case 0:
+                            cout<<"saliendo del excel"<<endl;
+                            break;
+                        default:
+                            cout<<"dato erroneo"<<endl;
+                            break;
+                    }
+                } while(opAux !=0);
             }else{
                 return 0;
             }
@@ -77,5 +136,29 @@ void menu_principal(){
     cout<<"respuesta: ";
 }
 
+void menu_funciones(){
+    cout<<"------Menu de acciones----------"<<endl;
+    cout<<"1. Escribir en una celda"<<endl;
+    cout<<"2. Posicionarse en una celda"<<endl;
+    cout<<"3. Copiar el contenido de la celda"<<endl;
+    cout<<"4. Cortar el contenido de la celda"<<endl;
+    cout<<"5. Pegar el contenido del clipboard en la celda"<<endl;
+    cout<<"6. Guardar hoja de calculo"<<endl;
+    cout<<"0. Salir de la hoja de calculo"<<endl;
+}
 //----------funciones-----------
+void posicion(string ubicacion){ //buscar entre todos los nodos hasta encontrar el id correcto
+    cout<<"ubicacion actual: "<<ubicacion<<endl;
+}
 
+void copiar(){
+
+}
+
+void cortar(){
+
+}
+
+void pegar(){
+
+}
