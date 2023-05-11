@@ -32,31 +32,15 @@ int main(){
                 cont = 5;
                 for(int i=0; i<cont;i++) {
                     dato = "|1| ";
-                    insertarNodo(dato);
-                    dato = "|2| ";
-                    insertarNodo2(dato);
-                    dato = "|3| ";
-                    insertarNodo3(dato);
-                    dato = "|4| ";
-                    insertarNodo4(dato);
-                    dato = "|5| ";
-                    insertarNodo5(dato);
+                    insert(dato);
                 }
 
                 cout<<endl;
-                desplegarListaPU();
-                desplegarListaPU2();
-                desplegarListaPU3();
-                desplegarListaPU4();
-                desplegarListaPU5();
+                display(head);
 
                 do{
                     cout<<endl;
-                    desplegarListaPU();
-                    desplegarListaPU2();
-                    desplegarListaPU3();
-                    desplegarListaPU4();
-                    desplegarListaPU5();
+
 
                     menu_funciones();
                     cin>>opAux;
@@ -115,9 +99,6 @@ int main(){
 
     } while (op != 0);
     return 0;
-
-    cout << "\n Lista Primero al ultimo\n";
-    desplegarListaPU();
 
     return 0;
 }
