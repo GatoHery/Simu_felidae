@@ -32,16 +32,30 @@ int main(){
                 cont = 5;
                 for(int i=0; i<cont;i++) {
                     dato = "|1| ";
-                    insert(dato);
+                    insert_front(&head, dato);
+                    dato = "|2| ";
+                    insert_front(&head2, dato);
+                    dato = "|3| ";
+                    insert_front(&head3, dato);
+                    dato = "|4| ";
+                    insert_front(&head4, dato);
+                    dato = "|5| ";
+                    insert_front(&head5, dato);
                 }
-
                 cout<<endl;
-                display(head);
+                displayList(head);
+                cout<<endl;
+                displayList(head2);
+                cout<<endl;
+                displayList(head3);
+                cout<<endl;
+                displayList(head4);
+                cout<<endl;
+                displayList(head5);
+
 
                 do{
                     cout<<endl;
-
-
                     menu_funciones();
                     cin>>opAux;
                     switch (opAux) {
