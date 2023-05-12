@@ -1,5 +1,6 @@
 #include <iostream>
 #include "nodo.h"
+#include <ctype.h>
 
 using namespace::std;
 
@@ -31,67 +32,77 @@ int main(){
             else if(op == 2){ //mantener 5x5
                 cont = 5;
                 for(int i=0; i<cont;i++) { //se insertan los nodos con datos
-                    dato = "|1| ";
+                    dato = "--|1|--*";
                     insertar(&head, dato);
-                    dato = "|2| ";
+                    dato = "--|2|--*";
                     insertar(&head2, dato);
-                    dato = "|3| ";
+                    dato = "--|3|--*";
                     insertar(&head3, dato);
-                    dato = "|4| ";
+                    dato = "--|4|--*";
                     insertar(&head4, dato);
-                    dato = "|5| ";
+                    dato = "--|5|--*";
                     insertar(&head5, dato);
                 }
 
-                //se ponen el ID, lo importante es la letra, el numero se cambia dentro de la funcion
-                id="A0";
+                //se ponen el ID, lo importante es el numero, la letra se cambia dentro de la funcion
+                id="1A";
                 agregarId(head,id);
-                id="B0";
+                id="2A";
                 agregarId(head2,id);
-                id="C0";
+                id="3A";
                 agregarId(head3,id);
-                id="D0";
+                id="4A";
                 agregarId(head4,id);
-                id="E0";
+                id="5A";
                 agregarId(head5,id);
-                id="A1";
+
+                id="1A";
 
                 //todas las acciones que realizara el usuario
                 do{
                     //depliega toda la lista de 5x5
+                    cout<<"|   A   ||   B   ||   C   ||   D   ||   E   |";
                     cout<<endl;
+                    cout<<"1|";
                     desplegarLista(head);
                     cout<<endl;
+                    cout<<"2|";
                     desplegarLista(head2);
                     cout<<endl;
+                    cout<<"3|";
                     desplegarLista(head3);
                     cout<<endl;
+                    cout<<"4|";
                     desplegarLista(head4);
                     cout<<endl;
+                    cout<<"5|";
                     desplegarLista(head5);
                     cout<<endl;
 
                     menu_funciones(id);
                     cin>>opAux;
                     switch (opAux) {
-                        case 1: //escribir en una celda
+                        case 1: //escribir en una celda-------------------------
                             cout<<"digite el dato"<<endl;
                             cin>>dato;
                             if(dato.length() <= 8){
+                                while(dato.length() != 8){
+                                    dato += " ";
+                                }
                                 switch (id[0]) {
-                                    case 'A':
+                                    case '1':
                                         buscarId(head,id,dato);
                                         break;
-                                    case 'B':
+                                    case '2':
                                         buscarId(head2,id,dato);
                                         break;
-                                    case 'C':
+                                    case '3':
                                         buscarId(head3,id,dato);
                                         break;
-                                    case 'D':
+                                    case '4':
                                         buscarId(head4,id,dato);
                                         break;
-                                    case 'E':
+                                    case '5':
                                         buscarId(head5,id,dato);
                                         break;
                                     default:
@@ -102,34 +113,45 @@ int main(){
                                 cout<<"el dato ingresado es mas grande de lo permitido"<<endl;
                             }
                             break;
-                        case 2: //posicionarse en una celda----------------
-                        cout<<"escriba la ubicacion"<<endl;
+                        case 2: //posicionarse en una celda---------------------
+                        cout<<"el id se trabaja primero usando un numero y luego la letra"<<endl;
+                        cout<<"escriba la ubicacion: ";
                         cin>>id;
-                        if(id.length() == 2){
-                            id[0] = toupper(id[0]);
+                        cout<<endl;
+                        if(id.length() == 2 && isalpha(id[1])){
+                            id[1] = toupper(id[1]);
                         }
                         else{
-                            cout<<"tamano no valido"<<endl;
-                            id="A1";
+                            cout<<"formato no valido"<<endl;
+                            id="1A";
                         }
                             break;
                         case 3: //copiar contenido de la celda-----------------------
                             switch (id[0]) {
-                                case 'A':
+                                case '1':
                                      portapapeles = buscarId(head,id);
                                      cout<<"contenido copiado: "<<portapapeles<<endl;
+                                     cout<<endl;
                                     break;
-                                case 'B':
+                                case '2':
                                     portapapeles = buscarId(head2,id);
+                                    cout<<"contenido copiado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
-                                case 'C':
+                                case '3':
                                     portapapeles = buscarId(head3,id);
+                                    cout<<"contenido copiado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
-                                case 'D':
+                                case '4':
                                     portapapeles = buscarId(head4,id);
+                                    cout<<"contenido copiado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
-                                case 'E':
+                                case '5':
                                     portapapeles = buscarId(head5,id);
+                                    cout<<"contenido copiado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
                                 default:
                                     cout<<"error en el ID"<<endl;
@@ -137,48 +159,62 @@ int main(){
                             break;
                         case 4: //cortar contenido de la celda------------------
                             switch (id[0]) {
-                                case 'A':
+                                case '1':
                                     portapapeles = cortarDato(head,id);
                                     cout<<"contenido cortado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
-                                case 'B':
+                                case '2':
                                     portapapeles = cortarDato(head2,id);
+                                    cout<<"contenido cortado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
-                                case 'C':
+                                case '3':
                                     portapapeles = cortarDato(head3,id);
+                                    cout<<"contenido cortado: "<<portapapeles<<endl;
                                     break;
-                                case 'D':
+                                case '4':
                                     portapapeles = cortarDato(head4,id);
+                                    cout<<"contenido cortado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
-                                case 'E':
+                                case '5':
                                     portapapeles = cortarDato(head5,id);
+                                    cout<<"contenido cortado: "<<portapapeles<<endl;
+                                    cout<<endl;
                                     break;
                                 default:
                                     cout<<"error en el ID"<<endl;
                             }
                             break;
                         case 5: // pegar contenido---------------------------
+                        cout<<"id: "<<id[0]<<endl;
                             if(portapapeles != ""){
                                 switch (id[0]) {
-                                    case 'A':
+                                    case '1':
                                         pegarDato(head,id,portapapeles);
                                         cout<<"contenido pegado: "<<portapapeles<<endl;
+                                        cout<<endl;
                                         break;
-                                    case 'B':
+                                    case '2':
                                         pegarDato(head,id,portapapeles);
                                         cout<<"contenido pegado: "<<portapapeles<<endl;
+                                        cout<<endl;
                                         break;
-                                    case 'C':
+                                    case '3':
                                         pegarDato(head,id,portapapeles);
                                         cout<<"contenido pegado: "<<portapapeles<<endl;
+                                        cout<<endl;
                                         break;
-                                    case 'D':
+                                    case '4':
                                         pegarDato(head,id,portapapeles);
                                         cout<<"contenido pegado: "<<portapapeles<<endl;
+                                        cout<<endl;
                                         break;
-                                    case 'E':
+                                    case '5':
                                         pegarDato(head,id,portapapeles);
                                         cout<<"contenido pegado: "<<portapapeles<<endl;
+                                        cout<<endl;
                                         break;
                                     default:
                                         cout<<"error en el ID"<<endl;
@@ -186,6 +222,7 @@ int main(){
                             }
                             else{
                                 cout<<"Tu portapapeles esta vacio, imposible realizar esta accion"<<endl;
+                                cout<<endl;
                             }
                             break;
                         case 6: //guardar archivo

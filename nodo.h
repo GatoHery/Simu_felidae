@@ -39,6 +39,7 @@ void desplegarLista(struct Node* node) {
 
     while (node != NULL) {
         cout<<node->data;
+        cout<<" ";
         last = node;
         node = node->next;
     }
@@ -87,6 +88,8 @@ void pegarDato(struct Node* node,string id,string dato) {
         if(node->id == id){
             cout<<"dato pegado"<<endl;
             node->data = dato;
+            last = node;
+            node = node->next;
         }
         else{
             last = node;
@@ -115,10 +118,44 @@ void agregarId(struct Node* node,string id) {
     struct Node* last;
     int cont = 1;
     while (node != NULL) {
-        id[1] = cont + '0';
-            node->id= id;
-            last = node;
-            node = node->next;
-            cont+=1;
+        switch(cont){
+            case 1:
+                id[1] = 'A';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 2:
+                id[1] = 'B';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 3:
+                id[1] = 'C';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 4:
+                id[1] = 'D';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 5:
+                id[1] = 'E';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            default:
+                cout<<"algo salio mal"<<endl;
+        }
             }
     }
