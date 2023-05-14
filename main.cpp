@@ -14,6 +14,8 @@ void menu_funciones(string id);
 int op = 0;
 int opAux = 0;
 int cont = 0;
+int filas = 0;
+int columnas = 0;
 
 string id="";
 string dato= "";
@@ -26,10 +28,260 @@ int main(){
         if(op == 1){ //se crea un nuevo archivo
             menu_tamaño();
             cin>> op;
-            if(op == 1){
-                return 0;
+            if(op == 1){ //tamono personalziado
+                cout<<"las dimensiones deben ser 6x6 o superior"<<endl;
+                cout<<"numero de filas: "<<endl;
+                cin>>filas;
+                cout<<"numero de columnas: "<<endl;
+                cin>>columnas;
+
+                if((filas <= 5 and columnas <= 5) or (filas > 15 and columnas > 15)){
+                    cout<<"ese tamano no esta permitido"<<endl;
+                }
+                else{
+                    for(int i=1;i<=filas;i++){
+                        if(i == 1){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|1|--*";
+                                insertar(&head, dato);
+                            }
+                        }
+                        else if(i == 2){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|2|--*";
+                                insertar(&head2, dato);
+                            }
+                        }
+                        else if(i == 3){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|3|--*";
+                                insertar(&head3, dato);
+                            }
+                        }
+                        else if(i == 4){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|4|--*";
+                                insertar(&head4, dato);
+                            }
+                        }
+                        else if(i == 5){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|5|--*";
+                                insertar(&head5, dato);
+                            }
+                        }
+                        else if(i == 6){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|6|--*";
+                                insertar(&head6, dato);
+                            }
+                        }
+                        else if(i == 7){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|7|--*";
+                                insertar(&head7, dato);
+                            }
+                        }
+                        else if(i == 8){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|8|--*";
+                                insertar(&head8, dato);
+                            }
+                        }
+                        else if(i == 9){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|9|--*";
+                                insertar(&head9, dato);
+                            }
+                        }
+                        else if(i == 10){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|10|--*";
+                                insertar(&head10, dato);
+                            }
+                        }
+                        else if(i == 11){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|11|--*";
+                                insertar(&head11, dato);
+                            }
+                        }
+                        else if(i == 12){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|12|--*";
+                                insertar(&head12, dato);
+                            }
+                        }
+                        else if(i == 13){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|13|--*";
+                                insertar(&head13, dato);
+                            }
+                        }
+                        else if(i == 14){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|14|--*";
+                                insertar(&head14, dato);
+                            }
+                        }
+                        else if(i == 15){
+                            for(int j=1;j<=columnas;j++){
+                                dato = "--|15|--*";
+                                insertar(&head15, dato);
+                            }
+                        }
+                    }
+                    //agregando ID si existe la fila
+                    id="1A";
+                    agregarId(head,id);
+                    id="2A";
+                    agregarId(head2,id);
+                    id="3A";
+                    agregarId(head3,id);
+                    id="4A";
+                    agregarId(head4,id);
+                    id="5A";
+                    agregarId(head5,id);
+                    id="6A";
+                    agregarId(head6,id);
+
+                    if(head7 != NULL){
+                        id="7A";
+                        agregarId(head7,id);
+                    }
+                    if(head8 != NULL){
+                        id="8A";
+                        agregarId(head8,id);
+                    }
+                    if(head9 != NULL){
+                        id="9A";
+                        agregarId(head9,id);
+                    }
+                    if(head10 != NULL){
+                        id="10A";
+                        agregarId(head10,id);
+                    }
+                    if(head11 != NULL){
+                        id="11A";
+                        agregarId(head11,id);
+                    }
+                    if(head12 != NULL){
+                        id="12A";
+                        agregarId(head12,id);
+                    }
+                    if(head13 != NULL){
+                        id="13A";
+                        agregarId(head13,id);
+                    }
+                    if(head14 != NULL){
+                        id="14A";
+                        agregarId(head14,id);
+                    }
+                    if(head15 != NULL){
+                        id="15A";
+                        agregarId(head15,id);
+                    }
+                    id="1A";
+
+                    // mostar en pantalla toda la lista
+                    do{
+                        cout<<endl;
+                        cout<<"1|";
+                        desplegarLista(head);
+                        cout<<endl;
+                        cout<<"2|";
+                        desplegarLista(head2);
+                        cout<<endl;
+                        cout<<"3|";
+                        desplegarLista(head3);
+                        cout<<endl;
+                        cout<<"4|";
+                        desplegarLista(head4);
+                        cout<<endl;
+                        cout<<"5|";
+                        desplegarLista(head5);
+                        cout<<endl;
+                        cout<<"6|";
+                        desplegarLista(head6);
+
+                        if(head7 != NULL){
+                            cout<<endl;
+                            cout<<"7|";
+                            desplegarLista(head7);
+                        }
+                        if(head8 != NULL){
+                            cout<<endl;
+                            cout<<"8|";
+                            desplegarLista(head8);
+                        }
+                        if(head9 != NULL){
+                            cout<<endl;
+                            cout<<"9|";
+                            desplegarLista(head9);
+                        }
+                        if(head10 != NULL){
+                            cout<<endl;
+                            cout<<"10|";
+                            desplegarLista(head10);
+                        }
+                        if(head11 != NULL){
+                            cout<<endl;
+                            cout<<"11|";
+                            desplegarLista(head11);
+                        }
+                        if(head12 != NULL){
+                            cout<<endl;
+                            cout<<"12|";
+                            desplegarLista(head12);
+                        }
+                        if(head13 != NULL){
+                            cout<<endl;
+                            cout<<"13|";
+                            desplegarLista(head13);
+                        }
+                        if(head14 != NULL){
+                            cout<<endl;
+                            cout<<"14|";
+                            desplegarLista(head14);
+                        }
+                        if(head15 != NULL){
+                            cout<<endl;
+                            cout<<"15|";
+                            desplegarLista(head15);
+                        }
+
+                        cout<<endl;
+                        menu_funciones(id);
+                        cin>>opAux;
+
+                        switch (opAux){
+                            case 1: //escribir en una celda
+                                break;
+                            case 2: //posicionarse en una celda
+                                break;
+                            case 3: //copiar informacion
+                                break;
+                            case 4: //cortar informacion
+                                break;
+                            case 5: //pegar informacion
+                                break;
+                            case 6: //guardar archivo
+                                cout<<"guardando archivo..."<<endl;
+                                //agregar funcionaldidad de guardado-----------
+                                cout<<"archivo guardado"<<endl;
+                                break;
+                            case 0: //salir del programa------------------
+                                cout<<"saliendo del excel"<<endl;
+                                break;
+                            default:
+                                cout<<"dato erroneo"<<endl;
+                        }
+                    }
+                    while(opAux !=0);
+
+                }
             }
-            else if(op == 2){ //mantener 5x5
+            else if(op == 2){ //mantener 5x5-------------------------------------------------------
                 cont = 5;
                 for(int i=0; i<cont;i++) { //se insertan los nodos con datos
                     dato = "--|1|--*";

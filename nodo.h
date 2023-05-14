@@ -13,6 +13,16 @@ struct Node* head2 = NULL;
 struct Node* head3 = NULL;
 struct Node* head4 = NULL;
 struct Node* head5 = NULL;
+struct Node* head6 = NULL;
+struct Node* head7 = NULL;
+struct Node* head8 = NULL;
+struct Node* head9 = NULL;
+struct Node* head10 = NULL;
+struct Node* head11 = NULL;
+struct Node* head12 = NULL;
+struct Node* head13 = NULL;
+struct Node* head14 = NULL;
+struct Node* head15 = NULL;
 
 void insertar(struct Node** head, string new_data)
 {
@@ -149,6 +159,76 @@ void agregarId(struct Node* node,string id) {
                 break;
             case 5:
                 id[1] = 'E';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 6:
+                id[1] = 'F';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 7:
+                id[1] = 'G';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 8:
+                id[1] = 'H';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 9:
+                id[1] = 'I';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 10:
+                id[1] = 'J';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 11:
+                id[1] = 'K';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 12:
+                id[1] = 'L';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 13:
+                id[1] = 'M';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 14:
+                id[1] = 'N';
+                node->id= id;
+                last = node;
+                node = node->next;
+                cont+=1;
+                break;
+            case 15:
+                id[1] = 'O';
                 node->id= id;
                 last = node;
                 node = node->next;
