@@ -80,7 +80,7 @@ string cortarDato(struct Node* node,string id) {
         if(node->id == id){
             cout<<"dato cortado"<<endl;
             aux = node->data;
-            node->data = "|-| ";
+            node->data = "|   -  |";
             return aux;
         }
         else{
@@ -112,6 +112,7 @@ string buscarId(struct Node* node,string id) {
     struct Node* last;
 
     while (node != NULL) {
+        cout<<node->id<<endl;
         if(node->id == id){
             cout<<"dato copiado"<<endl;
             return node->data;
@@ -130,110 +131,260 @@ void agregarId(struct Node* node,string id) {
     while (node != NULL) {
         switch(cont){
             case 1:
-                id[1] = 'A';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'A';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'A';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 2:
-                id[1] = 'B';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'B';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'B';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 3:
-                id[1] = 'C';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'C';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'C';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 4:
-                id[1] = 'D';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'D';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'D';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 5:
-                id[1] = 'E';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'E';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'E';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 6:
-                id[1] = 'F';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'F';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'F';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 7:
-                id[1] = 'G';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'G';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'G';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 8:
-                id[1] = 'H';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'H';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'H';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 9:
-                id[1] = 'I';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'I';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'I';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 10:
-                id[1] = 'J';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'J';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'J';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 11:
-                id[1] = 'K';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'K';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'K';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 12:
-                id[1] = 'L';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'L';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'L';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 13:
-                id[1] = 'M';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'M';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'M';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 14:
-                id[1] = 'N';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'N';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'N';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             case 15:
-                id[1] = 'O';
-                node->id= id;
-                last = node;
-                node = node->next;
-                cont+=1;
-                break;
+                if(id.length() == 3){
+                    id[2] = 'O';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
+                else{
+                    id[1] = 'O';
+                    node->id= id;
+                    last = node;
+                    node = node->next;
+                    cont+=1;
+                    break;
+                }
             default:
                 cout<<"algo salio mal"<<endl;
         }
