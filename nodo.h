@@ -8,6 +8,7 @@ struct Node {
     struct Node* prev;
 };
 
+//todas las listas existenten para crear el excel
 struct Node* head = NULL;
 struct Node* head2 = NULL;
 struct Node* head3 = NULL;
@@ -24,26 +25,23 @@ struct Node* head13 = NULL;
 struct Node* head14 = NULL;
 struct Node* head15 = NULL;
 
+//funciona principal para la creacion de nodos en la lista
 void insertar(struct Node** head, string new_data)
 {
-    //allocate memory for New node
     struct Node* newNode = new Node;
 
-    //assign data to new node
     newNode->data = new_data;
 
-    //new node is head and previous is null, since we are adding at the front
     newNode->next = (*head);
     newNode->prev = NULL;
 
-    //previous of head is new node
     if ((*head) != NULL)
         (*head)->prev = newNode;
 
-    //head points to new node
     (*head) = newNode;
 }
 
+//muestra toda la lista completa
 void desplegarLista(struct Node* node) {
     struct Node* last;
 
@@ -55,6 +53,7 @@ void desplegarLista(struct Node* node) {
     }
 }
 
+//busca el ID de la celda e escribe el elemento
 void buscarId(struct Node* node,string id,string dato) {
     struct Node* last;
 
@@ -91,6 +90,7 @@ string cortarDato(struct Node* node,string id) {
     return "";
 }
 
+//sobre escribe el dato de la celda seleccionada
 void pegarDato(struct Node* node,string id,string dato) {
     struct Node* last;
 
@@ -108,6 +108,7 @@ void pegarDato(struct Node* node,string id,string dato) {
     }
 }
 
+//copia el dato de la celda actual al clipboard
 string buscarId(struct Node* node,string id) {
     struct Node* last;
 
@@ -125,10 +126,12 @@ string buscarId(struct Node* node,string id) {
     return "";
 }
 
+//navega entre las listas y les inserta el ID correspondiente
 void agregarId(struct Node* node,string id) {
     struct Node* last;
     int cont = 1;
     while (node != NULL) {
+        //busca en que nodo estas para colocarle el ID hasta llegar al tope de la lista
         switch(cont){
             case 1:
                 if(id.length() == 3){

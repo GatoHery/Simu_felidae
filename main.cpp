@@ -9,14 +9,14 @@ void menu_tamaño(); //pregunta si el tamano del excel es adecuado para el traba
 void menu_principal();
 void menu_funciones(string id);
 
-//funciones de apoyo
-
+//datos de apoyo
 int op = 0;
 int opAux = 0;
 int cont = 0;
 int filas = 0;
 int columnas = 0;
 
+//datos auxiliares para el guardado de informacion
 string id="";
 string dato= "";
 string portapapeles = "";
@@ -38,10 +38,10 @@ int main(){
                 if((filas <= 5 and columnas <= 5) or (filas > 15 and columnas > 15)){
                     cout<<"ese tamano no esta permitido"<<endl;
                 }
-                else{
+                else{ //se creara una lista en base a la filas existentes seguido del tamano de la columna
                     for(int i=1;i<=filas;i++){
                         if(i == 1){
-                            for(int j=1;j<=columnas;j++){
+                            for(int j=1;j<=columnas;j++){ //las columnas se usan para ver cuantos nodos tendra una lista
                                 dato = "--|1|--*";
                                 insertar(&head, dato);
                             }
